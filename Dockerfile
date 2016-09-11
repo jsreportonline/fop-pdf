@@ -14,7 +14,8 @@ RUN curl -o fop.zip apache.miloslavbrada.cz/xmlgraphics/fop/binaries/fop-2.1-bin
 RUN unzip fop.zip
 RUN rm fop.zip
 RUN chmod +x fop-2.1/fop
-RUN export PATH=$PATH:fop-2.1
+
+ENV PATH "$PATH:fop-2.1"
 
 COPY package.json /usr/src/app/
 RUN npm install
