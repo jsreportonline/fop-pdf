@@ -1,0 +1,27 @@
+{
+  "name": "fop-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsreportonline/fop-pdf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsreportonline/fop-pdf/issues"
+  },
+  "homepage": "https://github.com/jsreportonline/fop-pdf#readme",
+  "dependencies": {
+    "async": "2.0.1",
+    "uuid": "2.0.2"
+  },
+  "devDependencies": {
+    "eslint": "3.3.1",
+    "standard": "7.1.2"
+  }
+}
