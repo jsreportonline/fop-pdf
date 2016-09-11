@@ -10,7 +10,7 @@ RUN apt-get install -y nodejs default-jre
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN wget apache.miloslavbrada.cz/xmlgraphics/fop/binaries/fop-2.1-bin.zip -O fop.zip
+RUN curl -o fop.zip apache.miloslavbrada.cz/xmlgraphics/fop/binaries/fop-2.1-bin.zip
 RUN unzip fop.zip
 RUN rm fop.zip
 RUN chmod +x fop-2.1/fop
