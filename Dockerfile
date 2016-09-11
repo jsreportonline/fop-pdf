@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y sudo
 RUN apt-get install -y  curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs default-jre
-RUN RUN apt-get install -y nodejs default-jre
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
