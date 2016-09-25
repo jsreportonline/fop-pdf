@@ -18,7 +18,7 @@ RUN chmod +x fop-2.1/fop
 ENV PATH "$PATH:fop-2.1"
 
 COPY package.json /usr/src/app/
-RUN npm install
+RUN npm install --production
 
 COPY . /usr/src/app
 
