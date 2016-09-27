@@ -18,7 +18,6 @@ const server = http.createServer((req, res) => {
   })
 
   req.on('end', function () {
-    console.log(data)
     const opts = JSON.parse(data)
 
     const id = uuid()

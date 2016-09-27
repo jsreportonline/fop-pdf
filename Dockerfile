@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y curl sudo && \
     rm fop.zip && \
     chmod +x fop-2.1/fop
 
-ENV PATH "$PATH:fop-2.1"
+ENV PATH "$PATH:/fop-2.1"
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
