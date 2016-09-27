@@ -1,21 +1,19 @@
 FROM ubuntu:latest
 MAINTAINER Jan Blaha
-EXPOSE 5000
+EXPOSE 5488
 
-RUN apt-get update && apt-get install -y sudo
-RUN apt-get install -y  curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-RUN apt-get install -y nodejs default-jre unzip
+RUN apt-get update && apt-get install -y curl sudo && \
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
+    apt-get install -y nodejs default-jre unzip && \
+    curl -o fop.zip apache.miloslavbrada.cz/xmlgraphics/fop/binaries/fop-2.1-bin.zip && \
+    unzip fop.zip && \
+    rm fop.zip && \
+    chmod +x fop-2.1/fop
+
+ENV PATH "$PATH:fop-2.1"
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-RUN curl -o fop.zip apache.miloslavbrada.cz/xmlgraphics/fop/binaries/fop-2.1-bin.zip
-RUN unzip fop.zip
-RUN rm fop.zip
-RUN chmod +x fop-2.1/fop
-
-ENV PATH "$PATH:fop-2.1"
 
 COPY package.json /usr/src/app/
 RUN npm install --production
