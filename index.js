@@ -38,9 +38,14 @@ const server = http.createServer((req, res) => {
       (stdout, stderr, cb) => fs.stat(path.join(temp, `${id}.pdf`), (err) => cb(err, stdout, stderr))
     ], (err, stdout, stderr) => {
       if (err) {
-        res.statusCode = 500
-        res.setHeader('Content-Type', 'text/plain')
-        return res.end('Error when executing fop ' + stdout + stderr + err.stack)
+        res.statusCode = 400
+        res.setHeader('Content-Type', 'application/json')
+        return res.end(JSON.stringify({
+          error: {
+            message: 'Error when executing fop ' + stdout + stderr,
+            stack: err.stack
+          }
+        }))
       }
 
       const stream = fs.createReadStream(path.join(temp, `${id}.pdf`))
