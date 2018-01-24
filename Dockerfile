@@ -1,4 +1,4 @@
-FROM ubuntu:yakkety
+FROM ubuntu:artful
 MAINTAINER Jan Blaha
 
 RUN apt-get update && apt-get install -y curl sudo && \
