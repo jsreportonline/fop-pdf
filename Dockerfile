@@ -1,4 +1,4 @@
-FROM ubuntu:artful
+FROM ubuntu:xenial
 MAINTAINER Jan Blaha
 
 RUN apt-get update && apt-get install -y curl sudo && \
